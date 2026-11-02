@@ -30,6 +30,12 @@ The extension is small on purpose: weewx already knows how to post in the Wunder
 
 Plain `http` is deliberate: the receiver speaks what consoles speak, and consoles cannot do TLS. The token is a write-only credential for this one station, bound to the first sender that uses it.
 
+## Compatibility and maintenance
+
+- weewx 5.x (tested on 5.5.2) and weewx 4.6+; Python 3.7 or newer — the extension has no dependencies beyond weewx itself.
+- Install with `weectl extension install` (weewx 5) or `wee_extension --install` (weewx 4); releases are tagged, never "use master".
+- Maintained by NuaSense: a release at least yearly, README updated for each major weewx version; issues at https://github.com/nuasense/weewx-nuasense/issues.
+
 ## What is sent
 
 Each archive record, as weewx's Wunderground uploader formats it: temperature, humidity, dew point, barometer, wind, rain, solar radiation and UV where the station has them. NuaSense reduces the barometer back to station pressure from the station's altitude.
